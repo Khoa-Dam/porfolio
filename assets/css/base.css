@@ -1,0 +1,134 @@
+@layer base {
+  /* ===== Core page ===== */
+  html,
+  body {
+    height: 100%;
+  }
+
+  body {
+    margin: 0 0 100px 100px;
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-sans);
+    font-size: var(--fs-400);
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* Link & focus */
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+  a:focus-visible {
+    outline: 2px dashed var(--accent);
+    outline-offset: 3px;
+  }
+
+  /* Media safety (phòng khi reset không bật) */
+  img,
+  picture,
+  svg,
+  video {
+    display: block;
+    max-width: 100%;
+  }
+
+  /* Container & section rhythm */
+  .container {
+    width: 100%;
+    max-width: var(--container);
+    margin-inline: auto;
+    padding-inline: var(--space-6);
+  }
+  .section {
+    padding: min(12vh, 120px) 0;
+  }
+
+  /* Headings & hero type */
+  .display {
+    font-size: var(--fs-800);
+    letter-spacing: -0.02em;
+    line-height: 1.05;
+    font-weight: 700;
+    margin: 0 0 var(--space-6);
+    text-wrap: balance;
+  }
+
+  .lead {
+    color: var(--muted);
+    font-size: var(--fs-500);
+    margin: 0 0 var(--space-8);
+  }
+
+  .grad {
+    background: linear-gradient(135deg, var(--grad-a), var(--grad-b));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  /* Selection color (nhẹ, không chói) */
+  ::selection {
+    background: color-mix(in srgb, var(--grad-a) 22%, transparent);
+    color: inherit;
+  }
+
+  /* Reveal-on-scroll (tôn trọng reduced-motion) */
+  .reveal-on-scroll {
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity var(--dur-3) var(--ease-standard),
+      transform var(--dur-3) var(--ease-standard);
+    will-change: opacity, transform;
+  }
+  .reveal-on-scroll.is-inview {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .reveal-on-scroll[data-delay="80"] {
+    transition-delay: 0.08s;
+  }
+  .reveal-on-scroll[data-delay="120"] {
+    transition-delay: 0.12s;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .reveal-on-scroll {
+      opacity: 1 !important;
+      transform: none !important;
+      transition: none !important;
+    }
+  }
+
+  /* Accessibility helpers */
+  .visually-hidden {
+    position: absolute !important;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  /* Skip link (hiện khi focus) */
+  .skip-link {
+    position: absolute;
+    left: -9999px;
+    top: 0;
+    background: var(--bg-elev);
+    color: var(--text);
+    padding: 8px 12px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+  }
+  .skip-link:focus {
+    left: 12px;
+    top: 12px;
+    z-index: 100;
+  }
+}

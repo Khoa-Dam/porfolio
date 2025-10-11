@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- ====== BASIC META ====== -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Kaito — Portfolio</title>
+    <meta
+      name="description"
+      content="Kaito's portfolio — Fullstack developer/ Blockchain. Selected work, skills, and contact."
+    />
+
+    <!-- SEO / Open Graph -->
+    <meta property="og:title" content="Kaito — Portfolio" />
+    <meta
+      property="og:description"
+      content="Fullstack developer / Blockchain — Selected projects and contact info."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="assets/images/og-cover.jpg" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Theming -->
+    <!-- <meta name="color-scheme" content="dark light" />
+    <meta
+      name="theme-color"
+      content="#000000"
+      media="(prefers-color-scheme: dark)"
+    />
+    <meta
+      name="theme-color"
+      content="#ffffff"
+      media="(prefers-color-scheme: light)"
+    /> -->
+
+    <!-- Icons / Manifest -->
+    <link rel="icon" href="assets/icons/favicon.ico" />
+    <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png" />
+    <link rel="manifest" href="assets/icons/site.webmanifest" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+
+    <script>
+      try {
+        if ((localStorage.getItem("theme") || "dark") === "dark")
+          document.documentElement.classList.add("sl-theme-dark");
+      } catch (e) {}
+    </script>
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/reset.css" />
+    <link rel="stylesheet" href="assets/css/variables.css" />
+    <link rel="stylesheet" href="assets/css/base.css" />
+    <link rel="stylesheet" href="assets/css/layout.css" />
+    <link rel="stylesheet" href="assets/css/components.css" />
+    <link rel="stylesheet" href="assets/css/responsive.css" />
+    <link rel="stylesheet" href="assets/css/intro.css" />
+    <link
+      rel="stylesheet"
+      media="(prefers-color-scheme:light)"
+      href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.15.0/cdn/themes/light.css"
+    />
+    <link
+      rel="stylesheet"
+      media="(prefers-color-scheme:dark)"
+      href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.15.0/cdn/themes/dark.css"
+    />
+
+    <!-- Optional: Preload hero/showcase image for perceived speed
+  <link rel="preload" as="image" href="assets/images/showcase-1.jpg" />
+  --></head>
+  <body>
+    <!-- <div id="terminal-overlay">
+      <div id="terminal-window">
+        <div class="terminal-header">
+          <div class="terminal-buttons">
+            <span class="t-btn close"></span>
+            <span class="t-btn min"></span>
+            <span class="t-btn max"></span>
+          </div>
+          <div class="terminal-title">/bin/bash</div>
+        </div>
+        <div id="terminal-body"></div>
+      </div>
+    </div> -->
+    <!-- Skip link for keyboard/reader users -->
+    <a class="skip-link" href="#app" style="position: absolute; left: -9999px"
+      >Skip to content</a
+    >
+
+    <!-- ====== HEADER / NAVBAR ====== -->
+    <header class="site-header" role="banner">
+      <div class="container header-inner">
+        <a href="#home" class="logo-wrap" aria-label="Go to home">
+          <img src="assets/icon/logo.svg" alt="logo" class="logo-header" />
+        </a>
+
+        <!-- Hamburger chỉ hiện trên mobile -->
+        <button
+          class="menu-toggle"
+          id="menuToggle"
+          aria-label="Open menu"
+          aria-expanded="false"
+          aria-controls="primaryNav"
+        >
+          <span class="menu-bar"></span>
+          <span class="menu-bar"></span>
+          <span class="menu-bar"></span>
+        </button>
+
+        <nav id="primaryNav" aria-label="Primary" class="nav-container">
+          <ul class="nav">
+            <li><a class="nav-link" href="#home">Home</a></li>
+            <li><a class="nav-link" href="#showcase">Highlight</a></li>
+            <li><a class="nav-link" href="#projects">Projects</a></li>
+            <li><a class="nav-link" href="#about">About</a></li>
+            <li><a class="nav-link" href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+
+        <!-- <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+          ▣
+        </button> -->
+      </div>
+    </header>
+
+    <!-- ====== MAIN APP (SPA-LITE) ====== -->
+    <main id="app" role="main">
+      <!-- ====== HERO FULL-SCREEN ====== -->
+      <section id="home" class="section hero" aria-label="Hero">
+        <div class="container hero-inner">
+          <div class="hero-content">
+            <div class="name">
+              <div class="hero-name reveal-on-scroll">I'm KAITO</div>
+            </div>
+
+            <p class="hero-tagline reveal-on-scroll" data-delay="80">
+              Fullstack Developer and Blockchain Enthusiast.
+            </p>
+            <div class="hero-cta reveal-on-scroll" data-delay="120">
+              <a class="btn btn-outline" href="#about">Resume</a>
+              <a class="btn btn-outline" href="#projects">Portfolio</a>
+            </div>
+            <div class="hero-socials reveal-on-scroll" data-delay="160">
+              <a
+                href="https://facebook.com/yourname"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Facebook"
+              >
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"
+                  />
+                </svg>
+              </a>
+              <a
+                href="https://linkedin.com/in/yourname"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="LinkedIn"
+              >
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z"
+                  />
+                </svg>
+              </a>
+              <a
+                href="https://github.com/yourname"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="GitHub"
+              >
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
+                  />
+                </svg>
+              </a>
+
+              <a
+                href="https://twitter.com/yourname"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Twitter"
+              >
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ====== STICKY SHOWCASE (SCROLLYTELLING) ====== -->
+      <section id="showcase" class="section showcase" aria-label="Highlight">
+        <div class="container showcase-grid">
+          <!-- Left: sticky stage -->
+          <div class="stage" aria-label="Demo stage">
+            <img
+              id="stageMedia"
+              src="assets/images/showcase-1.jpg"
+              alt="Project demo stage"
+            />
+          </div>
+
+          <!-- Right: content panels; on scroll, stage image/video updates -->
+          <div class="panels">
+            <article
+              class="panel reveal-on-scroll is-active"
+              data-media="assets/images/showcase-1.jpg"
+            >
+              <h2 class="panel-title">Speed & Performance</h2>
+              <p class="panel-text">
+                Optimized loading, Lighthouse ≥ 95, sensible caching.
+              </p>
+            </article>
+
+            <article
+              class="panel reveal-on-scroll"
+              data-media="assets/images/showcase-2.jpg"
+            >
+              <h2 class="panel-title">Smooth Experience</h2>
+              <p class="panel-text">
+                Just-right motion, honors reduced-motion, clear focus states.
+              </p>
+            </article>
+
+            <article
+              class="panel reveal-on-scroll"
+              data-media="assets/images/showcase-3.jpg"
+            >
+              <h2 class="panel-title">Clean Design</h2>
+              <p class="panel-text">
+                Dark canvas, bold type, crisp hierarchy inspired by Apple.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ====== PROJECTS (RENDERED FROM JSON) ====== -->
+      <section id="projects" class="section projects" aria-label="Projects">
+        <div class="container">
+          <header class="section-head">
+            <h2 class="section-title">Projects</h2>
+            <p class="section-sub">A few selected builds.</p>
+          </header>
+
+          <!-- JS will render cards from /data/projects.json -->
+          <div id="projectsGrid" class="grid projects-grid"></div>
+        </div>
+      </section>
+
+      <!-- ====== ABOUT ====== -->
+      <section id="about" class="section about" aria-label="About">
+        <div class="container about-grid">
+          <div class="about-text reveal-on-scroll">
+            <h2>About me</h2>
+            <p>
+              A developer focused on product experience, code quality, and
+              shipping fast. Build for me, build for you and build for the
+              future.
+            </p>
+            <ul class="badges">
+              <li class="badge">Fullstack developer</li>
+              <li class="badge">Web3</li>
+            </ul>
+          </div>
+
+          <div class="about-meta reveal-on-scroll" data-delay="80">
+            <div class="kv">
+              <span class="k">5+</span>
+              <span class="v">years experience</span>
+            </div>
+            <div class="kv">
+              <span class="k">15+</span>
+              <span class="v">production projects</span>
+            </div>
+            <div class="kv">
+              <span class="k">95</span>
+              <span class="v">Lighthouse avg</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ====== CONTACT ====== -->
+      <section id="contact" class="section contact" aria-label="Contact">
+        <div class="container contact-inner">
+          <h2 class="section-title">Contact</h2>
+          <p class="section-sub">
+            Open to collaborations, freelance, or just a chat.
+          </p>
+          <div class="contact-actions">
+            <a class="btn btn-primary" href="mailto:you@example.com"
+              >you@example.com</a
+            >
+            <a
+              class="btn btn-ghost"
+              href="https://github.com/yourname"
+              target="_blank"
+              rel="noreferrer"
+              >GitHub</a
+            >
+            <a
+              class="btn btn-ghost"
+              href="https://www.linkedin.com/in/yourname"
+              target="_blank"
+              rel="noreferrer"
+              >LinkedIn</a
+            >
+          </div>
+        </div>
+      </section>
+      <section id="resume" class="section resume" aria-label="Resume">
+        <div class="container">
+          <header class="section-head">
+            <h2 class="section-title">Resume</h2>
+            <p class="section-sub">
+              More of my credentials. Hard-working individual with a great
+              passion for technology.
+            </p>
+          </header>
+
+          <div class="resume-grid">
+            <div class="resume-col">
+              <div class="skills-group">
+                <h3 class="col-title">Software Skills</h3>
+                <ul class="skills-list">
+                  <li>
+                    <div class="skill-item">
+                      <i class="bx bxl-html5"></i>
+                      <span class="skill-name">HTML5</span>
+                      <div class="skill-bar">
+                        <div class="progress" style="width: 95%"></div>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="skill-item">
+                      <i class="bx bxl-css3"></i>
+                      <span class="skill-name">CSS3</span>
+                      <div class="skill-bar">
+                        <div class="progress" style="width: 90%"></div>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="skill-item">
+                      <i class="bx bxl-css3"></i>
+                      <span class="skill-name">Tailwind css</span>
+                      <div class="skill-bar">
+                        <div class="progress" style="width: 90%"></div>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="skill-item">
+                      <i class="bx bxl-javascript"></i>
+                      <span class="skill-name">JavaScript</span>
+                      <div class="skill-bar">
+                        <div class="progress" style="width: 85%"></div>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="skill-item">
+                      <i class="bx bxl-react"></i>
+                      <span class="skill-name">Next.js</span>
+                      <div class="skill-bar">
+                        <div class="progress" style="width: 80%"></div>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="skills-group">
+                <h3 class="col-title">Languages</h3>
+                <ul class="skills-list">
+                  <li>
+                    <div class="skill-item">
+                      <span class="skill-name">Vietnamese</span>
+                    </div>
+                    <div class="skill-bar">
+                      <div class="progress" style="width: 100%"></div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="skill-item">
+                      <span class="skill-name">English</span>
+                    </div>
+                    <div class="skill-bar">
+                      <div class="progress" style="width: 75%"></div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="resume-col">
+              <div class="experience-group">
+                <h3 class="col-title">Experience</h3>
+                <div class="timeline">
+                  <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">2023 - Present</div>
+                    <div class="timeline-content">
+                      <h4>Awesome Tech Company</h4>
+                      <p>Fullstack Developer</p>
+                    </div>
+                  </div>
+                  <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">2021 - 2023</div>
+                    <div class="timeline-content">
+                      <h4>Another Cool Startup</h4>
+                      <p>Frontend Developer</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="education-group">
+                <h3 class="col-title">Education</h3>
+                <div class="timeline">
+                  <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">2017 - 2021</div>
+                    <div class="timeline-content">
+                      <h4>University of Information Technology</h4>
+                      <p>Bachelor of Computer Science</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="resume-col">
+              <div class="skills-group">
+                <h3 class="col-title">Personal Skills</h3>
+                <ul class="personal-skills-list">
+                  <li>Creativity</li>
+                  <li>Team Work</li>
+                  <li>Organization</li>
+                  <li>Problem Solving</li>
+                </ul>
+              </div>
+
+              <div class="hobbies-group">
+                <h3 class="col-title">Hobbies & Interests</h3>
+                <div class="hobbies-grid">
+                  <div class="hobby-item">
+                    <i class="bx bx-code-alt"></i>
+                    <span>Coding</span>
+                  </div>
+                  <div class="hobby-item">
+                    <i class="bx bx-headphone"></i>
+                    <span>Music</span>
+                  </div>
+                  <div class="hobby-item">
+                    <i class="bx bx-camera"></i>
+                    <span>Photography</span>
+                  </div>
+                  <div class="hobby-item">
+                    <i class="bx bx-football"></i>
+                    <span>Sports</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ====== FOOTER ====== -->
+    <footer class="site-footer" role="contentinfo">
+      <div class="container footer-inner">
+        <small>© <span id="year"></span> Khoa Dam. All rights reserved.</small>
+      </div>
+    </footer>
+
+    <!-- ====== JS ====== -->
+    <script src="assets/js/intro.js" defer></script>
+    <script src="assets/js/projects.js" defer></script>
+    <script src="assets/js/header.js" defer></script>
+    <script src="assets/js/app.js" defer></script>
+
+    <!-- Noscript note: site works without JS but lacks effects & project rendering -->
+    <noscript
+      >This site works without JavaScript, but scroll effects and project
+      rendering from JSON will be disabled.</noscript
+    >
+  </body>
+</html>

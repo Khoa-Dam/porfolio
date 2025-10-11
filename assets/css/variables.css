@@ -1,0 +1,78 @@
+:root {
+  /* Màu — nền tối kiểu Apple */
+  --bg: #000; /* nền chính (canvas) */
+  --bg-elev: #0a0a0a; /* bề mặt nâng (thẻ/card) */
+  --text: #fffeff; /* màu chữ gần trắng */
+  --muted: rgba(255, 255, 255, 0.8); /* chữ phụ/ghi chú */
+  --line: #2a2a2a; /* viền mảnh */
+
+  /* Màu nhấn (có thể đổi sau) */
+  --accent: #9aa0ff;
+  --grad-a: #7dd3fc; /* dùng cho chữ gradient */
+  --grad-b: #a78bfa;
+
+  /* Chữ — to, sắc nét, tracking hơi âm */
+  --font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Text",
+    "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-mono: "Fira Code", "SF Mono", "Courier New", monospace;
+  --fs-300: clamp(0.95rem, 0.9rem + 0.2vw, 1.05rem);
+  --fs-400: clamp(1.05rem, 1rem + 0.35vw, 1.2rem);
+  --fs-500: clamp(1.2rem, 1.05rem + 0.8vw, 1.5rem);
+  --fs-600: clamp(1.45rem, 1.1rem + 1.4vw, 2rem);
+  --fs-700: clamp(2rem, 1.2rem + 3vw, 3rem);
+  --fs-800: clamp(2.6rem, 1.4rem + 5vw, 4.5rem);
+
+  /* Khoảng cách & bo góc */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --radius: 16px;
+  --radius-lg: 24px;
+
+  /* Layout */
+  --container: 1750px; /* max width vùng nội dung */
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+
+  /* Chuyển động (êm, tiết chế) */
+  --ease-standard: cubic-bezier(0.2, 0, 0, 1);
+  --ease-emphasized: cubic-bezier(0.2, 0, 0, 1);
+  --dur-1: 0.12s;
+  --dur-2: 0.24s;
+  --dur-3: 0.48s;
+
+  --header-h: 20px;
+
+  /* Kích cỡ responsive (clamp để tự co giãn theo viewport) */
+  --hero-size-1: clamp(1.5rem, 1rem + 3vw, 3.5rem); /* KAITO */
+  --hero-size-2: clamp(3rem, 1rem + 8vw, 7rem); /* DAM (to, nổi bật) */
+
+  /* Độ đậm */
+  --hero-weight-1: 600; /* KAITO: đậm vừa */
+  --hero-weight-2: 900; /* DAM: rất đậm */
+
+  /* Letter-spacing (tracking) */
+  --hero-track-1: 0.06em; /* KAITO: thoáng hơn */
+  --hero-track-2: -0.01em; /* DAM: nén nhẹ cho chữ to */
+
+  /* Line-height */
+  --hero-leading: 0.95;
+
+  /* Màu chữ & gradient highlight (kế thừa palette sẵn có nếu có) */
+  --hero-text: var(--text, #f5f5f7);
+  --hero-grad-a: var(--grad-a, #7dd3fc);
+  --hero-grad-b: var(--grad-b, #a78bfa);
+}
+
+/* Tuỳ chọn: theme sáng khi gắn [data-theme="light"] trên <html> */
+:root[data-theme="light"] {
+  --bg: #ffffff;
+  --bg-elev: #f6f6f7;
+  --text: #0a0a0a;
+  --muted: #4b4b50;
+  --line: #e6e6ea;
+}
