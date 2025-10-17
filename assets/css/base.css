@@ -37,13 +37,18 @@
 
   /* Container & section rhythm */
   .container {
-    width: 100%;
+    width: 90%;
     max-width: var(--container);
     margin-inline: auto;
     padding-inline: var(--space-6);
   }
   .section {
+    border-bottom: 1px solid var(--line);
     padding: min(12vh, 120px) 0;
+  }
+
+  .section:last-child {
+    border: none;
   }
 
   /* Headings & hero type */

@@ -5,17 +5,19 @@ const prefersReduced = window.matchMedia(
 
 const isVideoUrl = (url) => /\.(mp4|webm|mov|m4v)$/i.test(url);
 
-// ===== Reveal-on-scroll =====
+// ===== Reveal-on-scroll (repeatable) =====
 (() => {
   const els = Array.from(document.querySelectorAll(".reveal-on-scroll"));
   if (!els.length) return;
 
   const io = new IntersectionObserver(
-    (entries, obs) => {
+    (entries) => {
       entries.forEach((en) => {
         if (en.isIntersecting) {
           en.target.classList.add("is-inview");
-          obs.unobserve(en.target);
+        } else {
+          // Remove class when scroll out -> hiệu ứng lại khi scroll back
+          en.target.classList.remove("is-inview");
         }
       });
     },

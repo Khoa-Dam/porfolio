@@ -12,4 +12,45 @@
     font-size: var(--hero-size-1);
     margin: auto 50px;
   }
+
+  /* Showcase: sticky stacking effect trên mobile */
+  .showcase-grid {
+    display: block; /* Chuyển từ grid sang block */
+  }
+
+  .stage {
+    position: sticky;
+    top: calc(var(--header-h) + 20px);
+    margin-bottom: var(--space-6);
+    z-index: 1;
+  }
+
+  .panels {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .panel {
+    position: sticky;
+    top: calc(var(--header-h) + 350px); /* Dưới stage */
+    padding: var(--space-6);
+    background: var(--bg);
+    margin-bottom: var(--space-2);
+    z-index: 2;
+  }
+
+  /* Mỗi panel có z-index cao hơn panel trước để xếp chồng */
+  .panel:nth-child(1) {
+    z-index: 10;
+  }
+  .panel:nth-child(2) {
+    z-index: 11;
+  }
+  .panel:nth-child(3) {
+    z-index: 12;
+  }
+  .panel:nth-child(4) {
+    z-index: 13;
+  }
 }

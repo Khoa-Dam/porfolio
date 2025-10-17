@@ -313,7 +313,8 @@
 /* Right: panels */
 .panels {
   display: grid;
-  gap: var(--space-8);
+  max-width: 500px;
+  gap: var(--space-12);
 }
 .panel {
   border: 1px solid var(--line);
@@ -330,6 +331,21 @@
 .panel-title {
   font-size: var(--fs-600);
   margin: 0 0 var(--space-3);
+}
+.panel-icons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin: var(--space-4) 0;
+  padding: var(--space-3);
+  border-radius: var(--radius);
+  background: color-mix(in srgb, var(--bg-elev) 30%, transparent);
+}
+.panel-icons img {
+  transition: transform var(--dur-2) var(--ease-standard);
+}
+.panel-icons img:hover {
+  transform: scale(1.15) translateY(-2px);
 }
 .panel-text {
   color: var(--muted);
@@ -471,93 +487,132 @@
 .resume-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: var(--space-8);
+  gap: var(--space-12);
 }
 
 .resume-col .col-title {
+  width: fit-content;
   color: var(--text);
-  font-size: var(--fs-500);
+  font-size: var(--fs-400); /* Giảm từ fs-500 */
   font-weight: 600;
-  margin-bottom: var(--space-8);
-  padding-bottom: var(--space-3);
-  border-bottom: 2px solid var(--line);
+  margin-bottom: var(--space-4); /* Giảm từ space-8 */
+  border-bottom: 2px solid var(--grad-a);
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 0.5px; /* Giảm từ 1px */
+}
+
+.resume-col:nth-child(2) {
+  margin-left: 50px;
 }
 
 /* --- Cột 1: Skills --- */
 .skills-group {
-  margin-bottom: var(--space-10);
+  margin-bottom: var(--space-6); /* Giảm từ space-10 */
 }
 .skills-list {
   list-style: none;
   padding: 0;
   display: grid;
-  gap: var(--space-6);
+  gap: var(--space-4); /* Giảm từ space-6 */
 }
 .skill-item {
   display: flex;
   align-items: center;
-  gap: var(--space-3);
-  margin-bottom: var(--space-2);
+  gap: var(--space-2); /* Giảm từ space-3 */
+  margin-bottom: var(--space-1); /* Giảm từ space-2 */
   color: var(--muted);
+  font-size: var(--fs-200); /* Thêm font size nhỏ hơn */
 }
 .skill-item i {
-  font-size: 1.5rem;
+  font-size: 1.2rem; /* Giảm từ 1.5rem */
   color: var(--accent);
 }
 .skill-bar {
+  position: relative;
   width: 100%;
-  height: 6px;
-  background-color: var(--line);
+  height: 2px;
+  background-color: var(--text);
   border-radius: 999px;
-  overflow: hidden;
 }
-.skill-bar .progress {
-  height: 100%;
-  background-color: var(--accent);
-  border-radius: 999px;
+
+/* Tạo chấm tròn bằng pseudo-element ::after */
+.skill-bar::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: var(--skill-level, 0%);
+  transform: translate(-50%, -50%);
+  width: 10px; /* Giảm từ 14px */
+  height: 10px; /* Giảm từ 14px */
+  background-color: var(--bg);
+  border: 2px solid var(--text);
+  border-radius: 50%;
+  box-shadow: 0 0 8px rgba(var(--accent-rgb), 0.3); /* Giảm shadow */
 }
 
 /* --- Cột 2: Timeline (Experience & Education) --- */
 .experience-group,
 .education-group {
-  margin-bottom: var(--space-10);
+  margin-bottom: var(--space-6); /* Giảm từ space-10 */
 }
 .timeline {
   position: relative;
-  padding-left: var(--space-8);
-  border-left: 2px solid var(--line);
+  padding-left: var(--space-12);
 }
+
 .timeline-item {
   position: relative;
-  padding-bottom: var(--space-8);
+  padding-bottom: var(--space-6);
 }
+
+/* Line nối giữa các dots - dùng ::after */
+.timeline-item:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  left: calc(-1 * var(--space-12) - 1px);
+  top: 55px; /* Bắt đầu từ bottom của dot */
+  width: 2px;
+  height: calc(100% - 60px); /* Chiều cao = khoảng cách đến dot tiếp theo */
+  background: var(--text);
+}
+
 .timeline-item:last-child {
   padding-bottom: 0;
 }
+
 .timeline-dot {
   position: absolute;
-  left: calc(-1 * var(--space-8) - 6px); /* (padding + border_width/2) */
-  top: 4px;
-  width: 12px;
-  height: 12px;
+  left: calc(-1 * var(--space-12) - 26px); /* Center của dot 50px */
+  top: 0;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
-  background-color: var(--accent);
+  background: linear-gradient(135deg, var(--grad-a));
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.timeline-date {
-  color: var(--muted);
-  font-size: var(--fs-300);
-  margin-bottom: var(--space-2);
+
+.dot-text {
+  color: #fff;
+  font-size: 0.5rem;
+  font-weight: 700;
+  text-align: center;
+  line-height: 1.3;
+  letter-spacing: 0.5px;
 }
+
 .timeline-content h4 {
   color: var(--text);
-  font-size: var(--fs-400);
+  font-size: var(--fs-300);
   font-weight: 600;
   margin-bottom: var(--space-1);
 }
+
 .timeline-content p {
   color: var(--muted);
+  font-size: var(--fs-200);
 }
 
 /* --- Cột 3: Personal & Hobbies --- */
@@ -567,28 +622,68 @@
   display: grid;
   gap: var(--space-2);
   color: var(--muted);
+  font-size: var(--fs-200); /* Thêm font size nhỏ hơn */
 }
 .hobbies-group {
-  margin-top: var(--space-10);
+  margin-top: var(--space-6); /* Giảm từ space-10 */
 }
 .hobbies-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: var(--space-4);
+  gap: var(--space-3); /* Giảm từ space-4 */
 }
 .hobby-item {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: var(--space-2);
-  padding: var(--space-4);
+  gap: var(--space-1); /* Giảm từ space-2 */
+  padding: var(--space-3); /* Giảm từ space-4 */
   border: 1px solid var(--line);
   border-radius: var(--radius);
   color: var(--muted);
+  font-size: var(--fs-100); /* Thêm font size nhỏ hơn */
 }
 .hobby-item i {
-  font-size: 2rem;
-  color: var(--accent);
+  font-size: 1.5rem; /* Giảm từ 2rem */
+}
+.bx-football {
+  color: white;
+}
+/* Tech Stack Grid - compact layout */
+.tech-stack-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(70px, 1fr)); /* Giảm từ 80px */
+  gap: var(--space-3); /* Giảm từ space-4 */
+  margin-top: var(--space-3); /* Giảm từ space-4 */
+}
+
+.tech-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-1); /* Giảm từ space-2 */
+  padding: var(--space-2); /* Giảm từ space-3 */
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: color-mix(in srgb, var(--bg-elev) 50%, transparent);
+  transition: all var(--dur-2) var(--ease-standard);
+}
+
+.tech-item:hover {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+  background: color-mix(in srgb, var(--bg-elev) 80%, transparent);
+}
+
+.tech-item img {
+  width: 28px; /* Giảm từ 32px */
+  height: 28px; /* Giảm từ 32px */
+}
+
+.tech-item span {
+  font-size: 0.75rem; /* Giảm kích thước text */
+  color: var(--muted);
+  text-align: center;
 }
 
 /* --- Responsive cho Resume Section --- */
@@ -596,6 +691,9 @@
   .resume-grid {
     grid-template-columns: 1.2fr 1.8fr; /* Chuyển sang 2 cột */
     /* Cột 1 và 3 sẽ gộp lại */
+  }
+  .resume-col:nth-child(2) {
+    margin-left: 0;
   }
   .resume-col:nth-child(3) {
     /* Di chuyển cột 3 vào cuối cột 1 */

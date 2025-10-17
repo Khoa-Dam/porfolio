@@ -8,12 +8,11 @@
 
   /* Màu nhấn (có thể đổi sau) */
   --accent: #9aa0ff;
-  --grad-a: #7dd3fc; /* dùng cho chữ gradient */
+  --grad-a: rgb(43, 117, 182); /* dùng cho chữ gradient */
   --grad-b: #a78bfa;
 
   /* Chữ — to, sắc nét, tracking hơi âm */
-  --font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Text",
-    "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-sans: "Merriweather", "Helvetica Neue", Helvetica, Arial, sans-serif;
   --font-mono: "Fira Code", "SF Mono", "Courier New", monospace;
   --fs-300: clamp(0.95rem, 0.9rem + 0.2vw, 1.05rem);
   --fs-400: clamp(1.05rem, 1rem + 0.35vw, 1.2rem);

@@ -20,19 +20,6 @@
     <meta property="og:image" content="assets/images/og-cover.jpg" />
     <meta property="og:locale" content="en_US" />
 
-    <!-- Theming -->
-    <!-- <meta name="color-scheme" content="dark light" />
-    <meta
-      name="theme-color"
-      content="#000000"
-      media="(prefers-color-scheme: dark)"
-    />
-    <meta
-      name="theme-color"
-      content="#ffffff"
-      media="(prefers-color-scheme: light)"
-    /> -->
-
     <!-- Icons / Manifest -->
     <link rel="icon" href="assets/icons/favicon.ico" />
     <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png" />
@@ -43,18 +30,22 @@
       href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap"
       rel="stylesheet"
     />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap"
+      rel="stylesheet"
+    />
     <link
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
 
-    <script>
-      try {
-        if ((localStorage.getItem("theme") || "dark") === "dark")
-          document.documentElement.classList.add("sl-theme-dark");
-      } catch (e) {}
-    </script>
-    <!-- CSS -->
     <link rel="stylesheet" href="assets/css/reset.css" />
     <link rel="stylesheet" href="assets/css/variables.css" />
     <link rel="stylesheet" href="assets/css/base.css" />
@@ -121,7 +112,6 @@
             <li><a class="nav-link" href="#showcase">Highlight</a></li>
             <li><a class="nav-link" href="#projects">Projects</a></li>
             <li><a class="nav-link" href="#about">About</a></li>
-            <li><a class="nav-link" href="#contact">Contact</a></li>
           </ul>
         </nav>
 
@@ -145,7 +135,7 @@
               Fullstack Developer and Blockchain Enthusiast.
             </p>
             <div class="hero-cta reveal-on-scroll" data-delay="120">
-              <a class="btn btn-outline" href="#about">Resume</a>
+              <a class="btn btn-outline" href="#resume">Resume</a>
               <a class="btn btn-outline" href="#projects">Portfolio</a>
             </div>
             <div class="hero-socials reveal-on-scroll" data-delay="160">
@@ -223,6 +213,24 @@
         </div>
       </section>
 
+      <!-- ====== ABOUT ====== -->
+      <section id="about" class="section about" aria-label="About">
+        <div class="container about-grid">
+          <div class="about-text reveal-on-scroll">
+            <h2 class="reveal-on-scroll">About me</h2>
+            <p class="reveal-on-scroll" data-delay="80">
+              A developer focused on product experience, code quality, and
+              shipping fast. Build for me, build for you and build for the
+              future.
+            </p>
+            <ul class="badges">
+              <li class="badge">Fullstack developer</li>
+              <li class="badge">Web3</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
       <!-- ====== STICKY SHOWCASE (SCROLLYTELLING) ====== -->
       <section id="showcase" class="section showcase" aria-label="Highlight">
         <div class="container showcase-grid">
@@ -230,8 +238,8 @@
           <div class="stage" aria-label="Demo stage">
             <img
               id="stageMedia"
-              src="assets/images/showcase-1.jpg"
-              alt="Project demo stage"
+              src="assets/images/showcase/frontend.jpg"
+              alt="Technology showcase"
             />
           </div>
 
@@ -239,31 +247,166 @@
           <div class="panels">
             <article
               class="panel reveal-on-scroll is-active"
-              data-media="assets/images/showcase-1.jpg"
+              data-media="assets/images/showcase/frontend.jpg"
             >
-              <h2 class="panel-title">Speed & Performance</h2>
+              <h2 class="panel-title">Frontend Development</h2>
+              <div class="panel-icons">
+                <img
+                  height="32"
+                  width="32"
+                  src="https://cdn.simpleicons.org/react/61DAFB"
+                  alt="React"
+                />
+                <img
+                  height="32"
+                  width="32"
+                  src="https://cdn.simpleicons.org/nextdotjs/white"
+                  alt="Next.js"
+                />
+                <img
+                  height="32"
+                  width="32"
+                  src="https://cdn.simpleicons.org/tailwindcss/06B6D4"
+                  alt="Tailwind"
+                />
+                <img
+                  height="32"
+                  width="32"
+                  src="https://cdn.simpleicons.org/typescript/3178C6"
+                  alt="TypeScript"
+                />
+                <img
+                  height="32"
+                  width="32"
+                  src="https://cdn.simpleicons.org/html5/E34F26"
+                  alt="HTML5"
+                />
+                <img
+                  height="32"
+                  width="32"
+                  src="https://cdn.simpleicons.org/css/1572B6"
+                  alt="CSS3"
+                />
+              </div>
               <p class="panel-text">
-                Optimized loading, Lighthouse ≥ 95, sensible caching.
+                Building responsive, interactive UIs with React, Next.js, and
+                modern CSS, Tailwind. Focus on performance, accessibility, and
+                user experience.
               </p>
             </article>
 
             <article
               class="panel reveal-on-scroll"
-              data-media="assets/images/showcase-2.jpg"
+              data-media="assets/images/showcase/backend.jpg"
             >
-              <h2 class="panel-title">Smooth Experience</h2>
+              <h2 class="panel-title">Backend & APIs</h2>
+              <div class="panel-icons">
+                <img
+                  height="32"
+                  width="32"
+                  src="https://cdn.simpleicons.org/nodedotjs/339933"
+                  alt="Node.js"
+                />
+                <img
+                  height="32"
+                  width="32"
+                  src="https://cdn.simpleicons.org/nestjs/E0234E"
+                  alt="Nest.js"
+                />
+                <img
+                  height="32"
+                  width="32"
+                  src="https://cdn.simpleicons.org/express/white"
+                  alt="Express"
+                />
+                <img
+                  height="32"
+                  width="32"
+                  src="https://cdn.simpleicons.org/mongodb/47A248"
+                  alt="MongoDB"
+                />
+                <img
+                  height="32"
+                  width="32"
+                  src="https://cdn.simpleicons.org/mysql/4479A1"
+                  alt="MySQL"
+                />
+                <img
+                  height="32"
+                  width="32"
+                  src="https://cdn.simpleicons.org/postgresql/4169E1"
+                  alt="PostgreSQL"
+                />
+              </div>
               <p class="panel-text">
-                Just-right motion, honors reduced-motion, clear focus states.
+                Designing scalable REST APIs, database architecture, and
+                server-side logic. Experience with Node.js, Express, and cloud
+                platforms.
               </p>
             </article>
 
             <article
               class="panel reveal-on-scroll"
-              data-media="assets/images/showcase-3.jpg"
+              data-media="assets/images/showcase/blockchain.jpg"
             >
-              <h2 class="panel-title">Clean Design</h2>
+              <h2 class="panel-title">Blockchain & Web3</h2>
+              <div class="panel-icons">
+                <img
+                  height="32"
+                  width="32"
+                  src="https://cdn.simpleicons.org/ethereum/627EEA"
+                  alt="Ethereum"
+                />
+                <img
+                  height="32"
+                  width="32"
+                  src="https://cdn.simpleicons.org/solidity/363636"
+                  alt="Solidity"
+                />
+                <img
+                  height="32"
+                  width="32"
+                  src="https://cdn.simpleicons.org/ipfs/65C2CB"
+                  alt="IPFS"
+                />
+              </div>
               <p class="panel-text">
-                Dark canvas, bold type, crisp hierarchy inspired by Apple.
+                Smart contract development, DApp integration, and decentralized
+                solutions. Working with Solidity, Move, and various blockchain
+                ecosystems.
+              </p>
+            </article>
+
+            <article
+              class="panel reveal-on-scroll"
+              data-media="assets/images/showcase/devops.jpg"
+            >
+              <h2 class="panel-title">DevOps & Tools</h2>
+              <div class="panel-icons">
+                <img
+                  height="32"
+                  width="32"
+                  src="https://cdn.simpleicons.org/docker/2496ED"
+                  alt="Docker"
+                />
+
+                <img
+                  height="32"
+                  width="32"
+                  src="https://cdn.simpleicons.org/git/F05032"
+                  alt="Git"
+                />
+                <img
+                  height="32"
+                  width="32"
+                  src="https://cdn.simpleicons.org/github/white"
+                  alt="GitHub"
+                />
+              </div>
+              <p class="panel-text">
+                CI/CD pipelines, containerization with Docker, Git workflows,
+                and modern development tools to streamline deployment and
+                collaboration.
               </p>
             </article>
           </div>
@@ -274,8 +417,10 @@
       <section id="projects" class="section projects" aria-label="Projects">
         <div class="container">
           <header class="section-head">
-            <h2 class="section-title">Projects</h2>
-            <p class="section-sub">A few selected builds.</p>
+            <h2 class="section-title reveal-on-scroll">Projects</h2>
+            <p class="section-sub reveal-on-scroll" data-delay="80">
+              A few selected builds.
+            </p>
           </header>
 
           <!-- JS will render cards from /data/projects.json -->
@@ -283,211 +428,231 @@
         </div>
       </section>
 
-      <!-- ====== ABOUT ====== -->
-      <section id="about" class="section about" aria-label="About">
-        <div class="container about-grid">
-          <div class="about-text reveal-on-scroll">
-            <h2>About me</h2>
-            <p>
-              A developer focused on product experience, code quality, and
-              shipping fast. Build for me, build for you and build for the
-              future.
-            </p>
-            <ul class="badges">
-              <li class="badge">Fullstack developer</li>
-              <li class="badge">Web3</li>
-            </ul>
-          </div>
-
-          <div class="about-meta reveal-on-scroll" data-delay="80">
-            <div class="kv">
-              <span class="k">5+</span>
-              <span class="v">years experience</span>
-            </div>
-            <div class="kv">
-              <span class="k">15+</span>
-              <span class="v">production projects</span>
-            </div>
-            <div class="kv">
-              <span class="k">95</span>
-              <span class="v">Lighthouse avg</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- ====== CONTACT ====== -->
-      <section id="contact" class="section contact" aria-label="Contact">
-        <div class="container contact-inner">
-          <h2 class="section-title">Contact</h2>
-          <p class="section-sub">
-            Open to collaborations, freelance, or just a chat.
-          </p>
-          <div class="contact-actions">
-            <a class="btn btn-primary" href="mailto:you@example.com"
-              >you@example.com</a
-            >
-            <a
-              class="btn btn-ghost"
-              href="https://github.com/yourname"
-              target="_blank"
-              rel="noreferrer"
-              >GitHub</a
-            >
-            <a
-              class="btn btn-ghost"
-              href="https://www.linkedin.com/in/yourname"
-              target="_blank"
-              rel="noreferrer"
-              >LinkedIn</a
-            >
-          </div>
-        </div>
-      </section>
       <section id="resume" class="section resume" aria-label="Resume">
         <div class="container">
-          <header class="section-head">
-            <h2 class="section-title">Resume</h2>
-            <p class="section-sub">
-              More of my credentials. Hard-working individual with a great
-              passion for technology.
-            </p>
-          </header>
-
           <div class="resume-grid">
+            <!-- Cột 1: Tech Stack + Languages + Personal Skills -->
             <div class="resume-col">
               <div class="skills-group">
-                <h3 class="col-title">Software Skills</h3>
-                <ul class="skills-list">
-                  <li>
-                    <div class="skill-item">
-                      <i class="bx bxl-html5"></i>
-                      <span class="skill-name">HTML5</span>
-                      <div class="skill-bar">
-                        <div class="progress" style="width: 95%"></div>
-                      </div>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="skill-item">
-                      <i class="bx bxl-css3"></i>
-                      <span class="skill-name">CSS3</span>
-                      <div class="skill-bar">
-                        <div class="progress" style="width: 90%"></div>
-                      </div>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="skill-item">
-                      <i class="bx bxl-css3"></i>
-                      <span class="skill-name">Tailwind css</span>
-                      <div class="skill-bar">
-                        <div class="progress" style="width: 90%"></div>
-                      </div>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="skill-item">
-                      <i class="bx bxl-javascript"></i>
-                      <span class="skill-name">JavaScript</span>
-                      <div class="skill-bar">
-                        <div class="progress" style="width: 85%"></div>
-                      </div>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="skill-item">
-                      <i class="bx bxl-react"></i>
-                      <span class="skill-name">Next.js</span>
-                      <div class="skill-bar">
-                        <div class="progress" style="width: 80%"></div>
-                      </div>
-                    </div>
-                  </li>
-                </ul>
+                <h3 class="col-title reveal-on-scroll">Tech Stack</h3>
+                <div class="tech-stack-grid">
+                  <div class="tech-item">
+                    <img
+                      height="32"
+                      width="32"
+                      src="https://cdn.simpleicons.org/html5/E34F26"
+                      alt="HTML5"
+                    />
+                    <span>HTML5</span>
+                  </div>
+                  <div class="tech-item">
+                    <img
+                      height="32"
+                      width="32"
+                      src="https://cdn.simpleicons.org/css/1572B6"
+                      alt="CSS3"
+                    />
+                    <span>CSS3</span>
+                  </div>
+                  <div class="tech-item">
+                    <img
+                      height="32"
+                      width="32"
+                      src="https://cdn.simpleicons.org/javascript/F7DF1E"
+                      alt="JavaScript"
+                    />
+                    <span>JavaScript</span>
+                  </div>
+                  <div class="tech-item">
+                    <img
+                      height="32"
+                      width="32"
+                      src="https://cdn.simpleicons.org/typescript/3178C6"
+                      alt="TypeScript"
+                    />
+                    <span>TypeScript</span>
+                  </div>
+                  <div class="tech-item">
+                    <img
+                      height="32"
+                      width="32"
+                      src="https://cdn.simpleicons.org/react/61DAFB"
+                      alt="React"
+                    />
+                    <span>React</span>
+                  </div>
+                  <div class="tech-item">
+                    <img
+                      height="32"
+                      width="32"
+                      src="https://cdn.simpleicons.org/nextdotjs/white"
+                      alt="Next.js"
+                    />
+                    <span>Next.js</span>
+                  </div>
+                  <div class="tech-item">
+                    <img
+                      height="32"
+                      width="32"
+                      src="https://cdn.simpleicons.org/tailwindcss/06B6D4"
+                      alt="Tailwind"
+                    />
+                    <span>Tailwind</span>
+                  </div>
+                  <div class="tech-item">
+                    <img
+                      height="32"
+                      width="32"
+                      src="https://cdn.simpleicons.org/nodedotjs/339933"
+                      alt="Node.js"
+                    />
+                    <span>Node.js</span>
+                  </div>
+                  <div class="tech-item">
+                    <img
+                      height="32"
+                      width="32"
+                      src="https://cdn.simpleicons.org/git/F05032"
+                      alt="Git"
+                    />
+                    <span>Git</span>
+                  </div>
+                  <div class="tech-item">
+                    <img
+                      height="32"
+                      width="32"
+                      src="https://cdn.simpleicons.org/docker/2496ED"
+                      alt="Docker"
+                    />
+                    <span>Docker</span>
+                  </div>
+                  <div class="tech-item">
+                    <img
+                      height="32"
+                      width="32"
+                      src="https://cdn.simpleicons.org/nestjs/E0234E"
+                      alt="Nest.js"
+                    />
+                    <span>Nest.js</span>
+                  </div>
+                  <div class="tech-item">
+                    <img
+                      height="32"
+                      width="32"
+                      src="https://cdn.simpleicons.org/mysql/4479A1"
+                      alt="MySQL"
+                    />
+                    <span>MySQL</span>
+                  </div>
+                  <div class="tech-item">
+                    <img
+                      height="32"
+                      width="32"
+                      src="https://cdn.simpleicons.org/mongodb/47A248"
+                      alt="MongoDB"
+                    />
+                    <span>MongoDB</span>
+                  </div>
+                </div>
               </div>
 
               <div class="skills-group">
-                <h3 class="col-title">Languages</h3>
+                <h3 class="col-title reveal-on-scroll">Languages</h3>
                 <ul class="skills-list">
                   <li>
                     <div class="skill-item">
                       <span class="skill-name">Vietnamese</span>
                     </div>
-                    <div class="skill-bar">
-                      <div class="progress" style="width: 100%"></div>
-                    </div>
+                    <div class="skill-bar" style="--skill-level: 100%"></div>
                   </li>
                   <li>
                     <div class="skill-item">
                       <span class="skill-name">English</span>
                     </div>
-                    <div class="skill-bar">
-                      <div class="progress" style="width: 75%"></div>
-                    </div>
+                    <div class="skill-bar" style="--skill-level: 75%"></div>
                   </li>
+                </ul>
+              </div>
+
+              <div class="skills-group">
+                <h3 class="col-title reveal-on-scroll">Personal Skills</h3>
+                <ul class="personal-skills-list">
+                  <li>Creativity - Team Work - Problem Solving</li>
                 </ul>
               </div>
             </div>
 
+            <!-- Cột 2: Experience + Education -->
             <div class="resume-col">
               <div class="experience-group">
-                <h3 class="col-title">Experience</h3>
+                <h3 class="col-title reveal-on-scroll">Experience</h3>
                 <div class="timeline">
                   <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-date">2023 - Present</div>
+                    <div class="timeline-dot">
+                      <span class="dot-text">2025<br />Present</span>
+                    </div>
                     <div class="timeline-content">
-                      <h4>Awesome Tech Company</h4>
-                      <p>Fullstack Developer</p>
+                      <h4>Vendor - NFT Marketplace</h4>
+                      <p>Fullstack Developer - Cedra Blockchain Platform</p>
                     </div>
                   </div>
                   <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-date">2021 - 2023</div>
+                    <div class="timeline-dot">
+                      <span class="dot-text">Jan<br />2025</span>
+                    </div>
                     <div class="timeline-content">
-                      <h4>Another Cool Startup</h4>
-                      <p>Frontend Developer</p>
+                      <h4>Web3 Gaming Platform</h4>
+                      <p>
+                        Multiplayer Connection & Interactive Gaming - 2nd Place
+                        Hackathon Winner
+                      </p>
+                    </div>
+                  </div>
+                  <div class="timeline-item">
+                    <div class="timeline-dot">
+                      <span class="dot-text">Nov<br />2024</span>
+                    </div>
+                    <div class="timeline-content">
+                      <h4>MoveLazy - VSCode Extension</h4>
+                      <p>
+                        Smart Contract Development Tool - 2nd Place Hackathon
+                        Winner
+                      </p>
                     </div>
                   </div>
                 </div>
               </div>
 
               <div class="education-group">
-                <h3 class="col-title">Education</h3>
-                <div class="timeline">
-                  <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-date">2017 - 2021</div>
-                    <div class="timeline-content">
-                      <h4>University of Information Technology</h4>
-                      <p>Bachelor of Computer Science</p>
-                    </div>
-                  </div>
-                </div>
+                <h3 class="col-title reveal-on-scroll">Education</h3>
+                <h4 class="reveal-on-scroll" data-delay="80">
+                  Ho Chi Minh City University of Transport
+                </h4>
+                <p>Bachelor of Information Technology</p>
               </div>
             </div>
 
+            <!-- Cột 3: Hobbies & Interests -->
             <div class="resume-col">
-              <div class="skills-group">
-                <h3 class="col-title">Personal Skills</h3>
-                <ul class="personal-skills-list">
-                  <li>Creativity</li>
-                  <li>Team Work</li>
-                  <li>Organization</li>
-                  <li>Problem Solving</li>
-                </ul>
-              </div>
-
               <div class="hobbies-group">
-                <h3 class="col-title">Hobbies & Interests</h3>
+                <h3 class="col-title reveal-on-scroll">Hobbies & Interests</h3>
                 <div class="hobbies-grid">
                   <div class="hobby-item">
-                    <i class="bx bx-code-alt"></i>
+                    <img
+                      height="32"
+                      width="32"
+                      src="https://cdn.simpleicons.org/gnometerminal/5493e6"
+                      alt="HTML5"
+                    />
                     <span>Coding</span>
                   </div>
                   <div class="hobby-item">
-                    <i class="bx bx-headphone"></i>
+                    <img
+                      height="32"
+                      width="32"
+                      src="https://cdn.simpleicons.org/applemusic/FA243C"
+                      alt="Music"
+                    />
                     <span>Music</span>
                   </div>
                   <div class="hobby-item">
@@ -500,6 +665,8 @@
                   </div>
                 </div>
               </div>
+
+              <!-- Có thể thêm nội dung khác ở đây -->
             </div>
           </div>
         </div>
