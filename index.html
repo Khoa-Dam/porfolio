@@ -115,9 +115,7 @@
           </ul>
         </nav>
 
-        <!-- <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
-          ▣
-        </button> -->
+       
       </div>
     </header>
 
@@ -223,194 +221,169 @@
               shipping fast. Build for me, build for you and build for the
               future.
             </p>
+            
+            <!-- Key Stats -->
+            <div class="about-stats reveal-on-scroll" data-delay="120">
+              <div class="stat-item">
+                <span class="stat-number">2+</span>
+                <span class="stat-label">Years Experience</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number">15+</span>
+                <span class="stat-label">Projects Completed</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number">3</span>
+                <span class="stat-label">Hackathon Wins</span>
+              </div>
+            </div>
+
+            <!-- Skills & Interests -->
+            <div class="about-skills reveal-on-scroll" data-delay="160">
+              <h3>What I do</h3>
+              <div class="skills-grid">
+                <div class="skill-category">
+                  <h4>Frontend</h4>
+                  <p>React, Next.js, TypeScript, Tailwind CSS</p>
+                </div>
+                <div class="skill-category">
+                  <h4>Backend</h4>
+                  <p>Node.js, Express, MongoDB, PostgreSQL</p>
+                </div>
+                <div class="skill-category">
+                  <h4>Blockchain</h4>
+                  <p>Solidity, Web3, Smart Contracts, DApps</p>
+                </div>
+              </div>
+            </div>
+
             <ul class="badges">
               <li class="badge">Fullstack developer</li>
               <li class="badge">Web3</li>
+              <li class="badge">Open Source</li>
             </ul>
           </div>
+          <img src="./assets/images/avatar/avatar.png" alt="Avatar" width="400" height="600" class="about-avatar"/>
+
         </div>
       </section>
 
       <!-- ====== STICKY SHOWCASE (SCROLLYTELLING) ====== -->
       <section id="showcase" class="section showcase" aria-label="Highlight">
-        <div class="container showcase-grid">
-          <!-- Left: sticky stage -->
-          <div class="stage" aria-label="Demo stage">
-            <img
-              id="stageMedia"
-              src="assets/images/showcase/frontend.jpg"
-              alt="Technology showcase"
-            />
-          </div>
-
-          <!-- Right: content panels; on scroll, stage image/video updates -->
-          <div class="panels">
-            <article
-              class="panel reveal-on-scroll is-active"
-              data-media="assets/images/showcase/frontend.jpg"
-            >
-              <h2 class="panel-title">Frontend Development</h2>
-              <div class="panel-icons">
+        <h1 class="reveal-on-scroll">Get the Highlight.</h1>
+        <div class="showcase-grid">
+           <ul class="showcase-content">
+            <li class="showcase-content-item">
+              <h2>Hackathon Wins</h2>
+              <img src="assets/images/showcase/hackathon.png" class="showcase-content-item-image" alt="Hackathon Wins">
+            </li>
+            <li class="showcase-content-item">
+              <div class="showcase-content-item-header">
+                <h2>Frontend Development</h2>
+                <div class="panel-icons">
+                </div>
+           
                 <img
-                  height="32"
-                  width="32"
-                  src="https://cdn.simpleicons.org/react/61DAFB"
-                  alt="React"
-                />
-                <img
-                  height="32"
-                  width="32"
+                height="24"
+                width="24"
                   src="https://cdn.simpleicons.org/nextdotjs/white"
                   alt="Next.js"
                 />
                 <img
-                  height="32"
-                  width="32"
+                height="24"
+                width="24"
                   src="https://cdn.simpleicons.org/tailwindcss/06B6D4"
                   alt="Tailwind"
                 />
                 <img
-                  height="32"
-                  width="32"
+                height="24"
+                width="24"
                   src="https://cdn.simpleicons.org/typescript/3178C6"
                   alt="TypeScript"
                 />
-                <img
-                  height="32"
-                  width="32"
-                  src="https://cdn.simpleicons.org/html5/E34F26"
-                  alt="HTML5"
-                />
-                <img
-                  height="32"
-                  width="32"
-                  src="https://cdn.simpleicons.org/css/1572B6"
-                  alt="CSS3"
-                />
+            
               </div>
-              <p class="panel-text">
-                Building responsive, interactive UIs with React, Next.js, and
+              <p>Building responsive, interactive UIs with React, Next.js, and
                 modern CSS, Tailwind. Focus on performance, accessibility, and
-                user experience.
-              </p>
-            </article>
-
-            <article
-              class="panel reveal-on-scroll"
-              data-media="assets/images/showcase/backend.jpg"
-            >
-              <h2 class="panel-title">Backend & APIs</h2>
-              <div class="panel-icons">
-                <img
-                  height="32"
-                  width="32"
-                  src="https://cdn.simpleicons.org/nodedotjs/339933"
-                  alt="Node.js"
-                />
-                <img
-                  height="32"
-                  width="32"
-                  src="https://cdn.simpleicons.org/nestjs/E0234E"
-                  alt="Nest.js"
-                />
-                <img
-                  height="32"
-                  width="32"
-                  src="https://cdn.simpleicons.org/express/white"
-                  alt="Express"
-                />
-                <img
-                  height="32"
-                  width="32"
-                  src="https://cdn.simpleicons.org/mongodb/47A248"
-                  alt="MongoDB"
-                />
-                <img
-                  height="32"
-                  width="32"
-                  src="https://cdn.simpleicons.org/mysql/4479A1"
-                  alt="MySQL"
-                />
-                <img
-                  height="32"
-                  width="32"
-                  src="https://cdn.simpleicons.org/postgresql/4169E1"
-                  alt="PostgreSQL"
-                />
+                user experience.</p>
+                <img src="assets/images/showcase/frontend.png" class="showcase-content-item-image" alt="Frontend Development">
+            </li>
+            <li class="showcase-content-item">
+              <div class="showcase-content-item-header">
+                <h2>Backend & APIs</h2>
+                <div class="panel-icons">
+                  <img
+                  height="24"
+                  width="24"
+                    src="https://cdn.simpleicons.org/nestjs/E0234E"
+                    alt="Nest.js"
+                  />
+                  <img
+                    height="24"
+                    width="24"
+                    src="https://cdn.simpleicons.org/nodedotjs/339933"
+                    alt="Node.js"
+                  />
+              
+                  <img
+                  height="24"
+                  width="24"
+                    src="https://cdn.simpleicons.org/mongodb/47A248"
+                    alt="MongoDB"
+                  />
+      
+                </div>
               </div>
-              <p class="panel-text">
-                Designing scalable REST APIs, database architecture, and
+          
+              <p>Designing scalable REST APIs, database architecture, and
                 server-side logic. Experience with Node.js, Express, and cloud
-                platforms.
-              </p>
-            </article>
-
-            <article
-              class="panel reveal-on-scroll"
-              data-media="assets/images/showcase/blockchain.jpg"
-            >
-              <h2 class="panel-title">Blockchain & Web3</h2>
-              <div class="panel-icons">
-                <img
-                  height="32"
-                  width="32"
-                  src="https://cdn.simpleicons.org/ethereum/627EEA"
-                  alt="Ethereum"
-                />
-                <img
-                  height="32"
-                  width="32"
-                  src="https://cdn.simpleicons.org/solidity/363636"
-                  alt="Solidity"
-                />
-                <img
-                  height="32"
-                  width="32"
-                  src="https://cdn.simpleicons.org/ipfs/65C2CB"
-                  alt="IPFS"
-                />
+                platforms.</p>
+                <img src="assets/images/showcase/backend.png" class="showcase-content-item-image" alt="Backend & APIs">
+            </li>
+            <li class="showcase-content-item">
+              <div class="showcase-content-item-header">
+                <h2>Blockchain & Web3</h2>
+                <div class="panel-icons">
+                  <img
+                  height="24"
+                  width="24"
+                    src="https://cdn.simpleicons.org/ethereum/627EEA"
+                    alt="Ethereum"
+                  />
+                  <img
+                  height="24"
+                  width="24"
+                    src="https://cdn.simpleicons.org/solidity/363636"
+                    alt="Solidity"
+                  />
+                  <img
+                  height="24"
+                  width="24"
+                    src="https://cdn.simpleicons.org/ipfs/65C2CB"
+                    alt="IPFS"
+                  />
+                </div>
               </div>
-              <p class="panel-text">
-                Smart contract development, DApp integration, and decentralized
+              
+              <p>Smart contract development, DApp integration, and decentralized
                 solutions. Working with Solidity, Move, and various blockchain
-                ecosystems.
-              </p>
-            </article>
-
-            <article
-              class="panel reveal-on-scroll"
-              data-media="assets/images/showcase/devops.jpg"
-            >
-              <h2 class="panel-title">DevOps & Tools</h2>
-              <div class="panel-icons">
-                <img
-                  height="32"
-                  width="32"
-                  src="https://cdn.simpleicons.org/docker/2496ED"
-                  alt="Docker"
-                />
-
-                <img
-                  height="32"
-                  width="32"
-                  src="https://cdn.simpleicons.org/git/F05032"
-                  alt="Git"
-                />
-                <img
-                  height="32"
-                  width="32"
-                  src="https://cdn.simpleicons.org/github/white"
-                  alt="GitHub"
-                />
-              </div>
-              <p class="panel-text">
-                CI/CD pipelines, containerization with Docker, Git workflows,
-                and modern development tools to streamline deployment and
-                collaboration.
-              </p>
-            </article>
-          </div>
+                ecosystems.</p>
+                <img src="assets/images/showcase/blockchain.png" class="showcase-content-item-image" alt="Blockchain & Web3">
+            </li>
+           
+            </ul>
+       
         </div>
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+        <div class="dots-container">
+          <span class="dot" onclick="currentSlide(1)"></span>
+          <span class="dot" onclick="currentSlide(2)"></span>
+          <span class="dot" onclick="currentSlide(3)"></span>
+          <span class="dot" onclick="currentSlide(4)"></span>
+        </div>
+     
       </section>
 
       <!-- ====== PROJECTS (RENDERED FROM JSON) ====== -->
@@ -685,6 +658,7 @@
     <script src="assets/js/projects.js" defer></script>
     <script src="assets/js/header.js" defer></script>
     <script src="assets/js/app.js" defer></script>
+    <script src="assets/js/slide.js" defer></script>
 
     <!-- Noscript note: site works without JS but lacks effects & project rendering -->
     <noscript

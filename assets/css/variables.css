@@ -1,8 +1,10 @@
 :root {
   /* Màu — nền tối kiểu Apple */
   --bg: #000; /* nền chính (canvas) */
+  --bg-light: #161617;
   --bg-elev: #0a0a0a; /* bề mặt nâng (thẻ/card) */
   --text: #fffeff; /* màu chữ gần trắng */
+  --text-muted: #88858a;
   --muted: rgba(255, 255, 255, 0.8); /* chữ phụ/ghi chú */
   --line: #2a2a2a; /* viền mảnh */
 
@@ -67,11 +69,3 @@
   --hero-grad-b: var(--grad-b, #a78bfa);
 }
 
-/* Tuỳ chọn: theme sáng khi gắn [data-theme="light"] trên <html> */
-:root[data-theme="light"] {
-  --bg: #ffffff;
-  --bg-elev: #f6f6f7;
-  --text: #0a0a0a;
-  --muted: #4b4b50;
-  --line: #e6e6ea;
-}
