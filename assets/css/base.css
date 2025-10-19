@@ -44,7 +44,7 @@
   }
   .section {
     border-bottom: 1px solid var(--line);
-    padding: min(12vh, 120px) 0;
+    padding: min(8vh, 100px) 0;
   }
 
   .section:last-child {

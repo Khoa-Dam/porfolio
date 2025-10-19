@@ -145,7 +145,7 @@
 }
 
 .hero-tagline {
-  font-size: clamp(1rem, 2vw, 1.25rem);
+  font-size: clamp(1rem, 2vw, 1rem);
   color: var(--muted);
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -326,9 +326,12 @@
   overflow: hidden;
   box-shadow: var(--shadow);
   padding: var(--space-4);
-  width: 100%;
+  width: 90%;
   max-width: 1280px;
   min-width: 75vw;
+}
+.showcase-content-item p {
+  text-align: left;
 }
 .showcase-content-item-header {
   display: flex;
@@ -344,10 +347,77 @@
 .showcase-content-item-image {
   border-radius: var(--radius-lg);
   border: 1px solid var(--line);
-  width: 100%;
+  width: 90%;
   height: 100%;
-  padding: var(--space-4);
+  padding: var(--space-1);
   object-fit: cover;
+}
+
+/* Panel navigation dots */
+.panel-nav-dots {
+  display: flex !important;
+  gap: 8px;
+  margin-top: 12px;
+  align-items: center;
+  justify-content: center;
+  position: fixed !important;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out;
+  z-index: 9999 !important;
+  background: #363537 !important;
+  border-radius: var(--radius-lg);
+  backdrop-filter: blur(10px);
+}
+
+.panel-nav-dots.visible {
+  opacity: 1 !important;
+}
+
+.panel-nav-dots .dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #d8d8d8;
+  transition: all 0.8s ease;
+  cursor: pointer;
+  position: relative;
+}
+
+.panel-nav-dots .dot.active {
+  width: 40px;
+  height: 6px;
+  border-radius: 3px;
+  background: #d8d8d8;
+  transform: none;
+  overflow: hidden;
+}
+
+.panel-nav-dots .dot.active::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0%;
+  background: #fff;
+  border-radius: 3px;
+  animation: progressBar 5s linear forwards;
+}
+
+.panel-nav-dots .dot.active.paused::before {
+  animation-play-state: paused;
+}
+
+@keyframes progressBar {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
 }
 
 .prev, .next {
@@ -585,7 +655,6 @@
 .stat-number {
   font-size: var(--fs-600);
   font-weight: 700;
-  color: var(--accent);
   line-height: 1;
 }
 
@@ -643,7 +712,7 @@
 }
 .badges {
   display: flex;
-  gap: 8px;
+  gap: 50px;
   flex-wrap: wrap;
 }
 .badge {

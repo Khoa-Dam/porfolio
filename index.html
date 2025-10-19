@@ -138,7 +138,7 @@
             </div>
             <div class="hero-socials reveal-on-scroll" data-delay="160">
               <a
-                href="https://facebook.com/yourname"
+                href="https://www.facebook.com/khoa0703"
                 target="_blank"
                 rel="noreferrer"
                 aria-label="Facebook"
@@ -155,7 +155,7 @@
                 </svg>
               </a>
               <a
-                href="https://linkedin.com/in/yourname"
+                href="https://www.linkedin.com/in/koa73/"
                 target="_blank"
                 rel="noreferrer"
                 aria-label="LinkedIn"
@@ -172,7 +172,7 @@
                 </svg>
               </a>
               <a
-                href="https://github.com/yourname"
+                href="https://github.com/Khoa-Dam"
                 target="_blank"
                 rel="noreferrer"
                 aria-label="GitHub"
@@ -190,7 +190,7 @@
               </a>
 
               <a
-                href="https://twitter.com/yourname"
+                href="https://x.com/KhoaDam73"
                 target="_blank"
                 rel="noreferrer"
                 aria-label="Twitter"
@@ -225,7 +225,7 @@
             <!-- Key Stats -->
             <div class="about-stats reveal-on-scroll" data-delay="120">
               <div class="stat-item">
-                <span class="stat-number">2+</span>
+                <span class="stat-number">1+</span>
                 <span class="stat-label">Years Experience</span>
               </div>
               <div class="stat-item">
@@ -233,7 +233,7 @@
                 <span class="stat-label">Projects Completed</span>
               </div>
               <div class="stat-item">
-                <span class="stat-number">3</span>
+                <span class="stat-number">2</span>
                 <span class="stat-label">Hackathon Wins</span>
               </div>
             </div>
@@ -270,14 +270,17 @@
 
       <!-- ====== STICKY SHOWCASE (SCROLLYTELLING) ====== -->
       <section id="showcase" class="section showcase" aria-label="Highlight">
+        
         <h1 class="reveal-on-scroll">Get the Highlight.</h1>
         <div class="showcase-grid">
            <ul class="showcase-content">
-            <li class="showcase-content-item">
+            <li class="showcase-content-item" id="panel-0">
               <h2>Hackathon Wins</h2>
+              <p>I have won 2 hackathons and 1st place in 1 hackathon</p>
               <img src="assets/images/showcase/hackathon.png" class="showcase-content-item-image" alt="Hackathon Wins">
             </li>
-            <li class="showcase-content-item">
+            <li class="showcase-content-item" id="panel-1">
+              <img src="assets/images/showcase/frontend.png" class="showcase-content-item-image" alt="Frontend Development">
               <div class="showcase-content-item-header">
                 <h2>Frontend Development</h2>
                 <div class="panel-icons">
@@ -306,9 +309,9 @@
               <p>Building responsive, interactive UIs with React, Next.js, and
                 modern CSS, Tailwind. Focus on performance, accessibility, and
                 user experience.</p>
-                <img src="assets/images/showcase/frontend.png" class="showcase-content-item-image" alt="Frontend Development">
+               
             </li>
-            <li class="showcase-content-item">
+            <li class="showcase-content-item" id="panel-2">
               <div class="showcase-content-item-header">
                 <h2>Backend & APIs</h2>
                 <div class="panel-icons">
@@ -340,7 +343,8 @@
                 platforms.</p>
                 <img src="assets/images/showcase/backend.png" class="showcase-content-item-image" alt="Backend & APIs">
             </li>
-            <li class="showcase-content-item">
+            <li class="showcase-content-item" id="panel-3">
+              <img src="assets/images/showcase/blockchain.png" class="showcase-content-item-image" alt="Blockchain & Web3">
               <div class="showcase-content-item-header">
                 <h2>Blockchain & Web3</h2>
                 <div class="panel-icons">
@@ -368,21 +372,18 @@
               <p>Smart contract development, DApp integration, and decentralized
                 solutions. Working with Solidity, Move, and various blockchain
                 ecosystems.</p>
-                <img src="assets/images/showcase/blockchain.png" class="showcase-content-item-image" alt="Blockchain & Web3">
+              
             </li>
            
             </ul>
        
         </div>
-        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-        <a class="next" onclick="plusSlides(1)">&#10095;</a>
-
-        <div class="dots-container">
-          <span class="dot" onclick="currentSlide(1)"></span>
-          <span class="dot" onclick="currentSlide(2)"></span>
-          <span class="dot" onclick="currentSlide(3)"></span>
-          <span class="dot" onclick="currentSlide(4)"></span>
-        </div>
+        <article class="panel-nav-dots" id="panel-0">
+          <div class="dot" data-for="0" onclick="scrollToPanel(0)"></div>
+          <div class="dot" data-for="1" onclick="scrollToPanel(1)"></div>
+          <div class="dot" data-for="2" onclick="scrollToPanel(2)"></div>
+          <div class="dot" data-for="3" onclick="scrollToPanel(3)"></div>
+        </article>
      
       </section>
 
@@ -403,6 +404,8 @@
 
       <section id="resume" class="section resume" aria-label="Resume">
         <div class="container">
+          <h2 class="section-title reveal-on-scroll">Resume</h2>
+          
           <div class="resume-grid">
             <!-- Cột 1: Tech Stack + Languages + Personal Skills -->
             <div class="resume-col">
@@ -596,13 +599,7 @@
                 </div>
               </div>
 
-              <div class="education-group">
-                <h3 class="col-title reveal-on-scroll">Education</h3>
-                <h4 class="reveal-on-scroll" data-delay="80">
-                  Ho Chi Minh City University of Transport
-                </h4>
-                <p>Bachelor of Information Technology</p>
-              </div>
+             
             </div>
 
             <!-- Cột 3: Hobbies & Interests -->
@@ -636,6 +633,20 @@
                     <i class="bx bx-football"></i>
                     <span>Sports</span>
                   </div>
+                </div>
+              </div>
+              <div class="education-group">
+                <h3 class="col-title reveal-on-scroll">Education</h3>
+                <div class="education-item reveal-on-scroll" data-delay="80">
+                  <h4 class="reveal-on-scroll">
+                   - Ho Chi Minh City University of Transport
+                  </h4>
+                  <p>Bachelor of Information Technology</p>
+                </div>
+              
+
+                <div class="education-item">
+                  <h4 class="reveal-on-scroll">- Aqua Move Academy - Integrated Sui and its ecosystem in side projects</h4>
                 </div>
               </div>
 
