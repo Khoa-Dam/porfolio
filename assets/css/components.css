@@ -902,10 +902,7 @@
 }
 
 /* ===== CONTACT ===== */
-.contact {
-  background: var(--bg-elev);
-  border-top: 1px solid var(--line);
-}
+
 
 .contact-grid {
   display: grid;
@@ -963,25 +960,27 @@
 
 .contact-form {
   background: #fff;
-  padding: 2rem;
+  padding: 1.5rem;
   border-radius: 0;
   border: 1px solid black;
   box-shadow: -0.6rem 0.6rem 0 rgba(29, 30, 28, 0.26);
   font-family: 'Roboto', sans-serif;
   display: flex;
   flex-direction: column;
+  width: 80%;
+  margin: 0 auto;
 }
 
 .form-group {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 .form-group label {
   display: block;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.25rem;
   font-weight: 600;
   color: black;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
@@ -989,14 +988,14 @@
 .form-group input,
 .form-group textarea {
   width: 100%;
-  padding: 5px;
+  padding: 8px;
   border: 2px solid rgba(0, 0, 0, 0.6);
   border-radius: 0;
   background: #dadad3;
   background-image: none;
   color: black;
   font-family: 'Roboto', sans-serif;
-  font-size: 1rem;
+  font-size: 0.9rem;
   transition: all var(--dur-2) var(--ease-standard);
   box-sizing: border-box;
   -webkit-box-shadow: none;
@@ -1011,7 +1010,7 @@
 
 .form-group textarea {
   resize: vertical;
-  min-height: 50px;
+  min-height: 80px;
   line-height: 1.5;
 }
 
@@ -1045,8 +1044,8 @@
 /* Contact button styling */
 .contact-form .btn-primary {
   width: auto;
-  padding: 5px 15px;
-  font-size: 1rem;
+  padding: 8px 16px;
+  font-size: 0.9rem;
   font-weight: 500;
   text-transform: none;
   letter-spacing: 0;
@@ -1061,7 +1060,7 @@
   -moz-box-shadow: none;
   box-shadow: none;
   align-self: flex-end;
-  margin-top: 10px;
+  margin-top: 8px;
 }
 
 .contact-form .btn-primary:hover {
