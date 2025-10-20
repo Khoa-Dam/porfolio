@@ -1,4 +1,4 @@
-// assets/js/intro.js (Cập nhật để "kaito_dam_portfolio" xuống dòng)
+
 
 document.addEventListener("DOMContentLoaded", () => {
   const overlay = document.getElementById("terminal-overlay");
@@ -17,10 +17,9 @@ document.addEventListener("DOMContentLoaded", () => {
       type: "output",
       text: "Kaito",
       color: "text-info",
-      // THAY ĐỔI: Đã xóa dòng "inline: true," ở đây
     },
     { type: "delay", duration: 600 },
-    { type: "command", text: "open https://khoa-dam.github.io/porfolio/" }, // <-- LƯU Ý: Hãy thay URL này!
+    { type: "command", text: "open https://khoa-dam.github.io/porfolio/" },
     { type: "delay", duration: 400 },
     {
       type: "output",

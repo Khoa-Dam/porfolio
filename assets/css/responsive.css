@@ -1,3 +1,254 @@
+/* ===== RESPONSIVE STYLES ===== */
+
+/* Large screens */
+@media (min-width: 1750px) { 
+  .showcase-content-item {
+    max-width: 1280px;
+    min-width: 1280px;
+  }
+}
+
+/* Tablet and below */
+@media (max-width: 1200px) {
+  .showcase-grid,
+  .projects-grid {
+    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+  .stage {
+    position: sticky;
+    top: calc(var(--header-h) + 20px);
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto 150px;
+    order: 1;
+  }
+  /* (Giả định) Chuyển layout về 1 cột */
+  .projects-grid {
+    display: block; 
+  }
+  
+  /* B1: Làm cho mỗi project-item-link (thẻ <a>) dính lại */
+  .project-item-link {
+    position: -webkit-sticky; /* Hỗ trợ Safari */
+    position: sticky;
+    top: calc(var(--header-h) + 250px); /* Dính ở dưới stage, không đè lên stage */
+  }
+
+  /* B2: Định hình cho các lớp bên trong (thẻ <article>) */
+  .project-item {
+    /* BẮT BUỘC: Phải có màu nền đè lên lớp cũ */
+    background-color: var(--bg-elev);
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem;
+    
+    /* Border và styling */
+    border: 1px solid var(--line);
+    border-radius: var(--radius-lg);
+  }
+  
+  /* Project link icon styling */
+  .project-link-icon {
+    display: inline-block;
+    margin-left: 0.5rem;
+    color: var(--text-muted);
+    opacity: 0.7;
+    transition: all 0.3s ease;
+    vertical-align: middle;
+  }
+  
+  .project-item:hover .project-link-icon {
+    color: var(--grad-a);
+    opacity: 1;
+    transform: scale(1.1);
+  }
+  
+  /* X link specific styling */
+  .project-x-link {
+    margin-left: 0.25rem;
+  }
+  
+  .project-x-link svg {
+    fill: var(--text-muted);
+  }
+  
+  .project-item:hover .project-x-link svg {
+    fill: #1DA1F2; /* Twitter blue */
+  }
+
+  /* * Ngăn thẻ cha có overflow: hidden
+   * Hiệu ứng sticky sẽ không hoạt động nếu thẻ cha
+   * (ví dụ: .projects-content) có 'overflow: hidden'
+   */
+  .projects-content {
+    overflow: visible; /* Đảm bảo overflow không bị ẩn */
+    padding: 0;
+    position: relative;
+    max-height: none;
+    order: 2;
+    margin-top: auto;
+  }
+  .projects-grid::before {
+    display: none;
+  }
+  .projects-grid > h2 {
+    grid-column: 1;
+    margin-bottom: var(--space-6);
+    order: 0;
+  }
+}
+
+/* Medium screens */
+@media (max-width: 900px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+  .about-avatar {
+    position: static;
+    max-width: 300px;
+    justify-self: center;
+    width: 100%;
+    height: auto;
+  }
+  .about-meta {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .showcase-grid,
+  .projects-grid {
+    margin-left: 0;
+  }
+  .showcase-content-item-header h2,
+  .project-content-item-header h2{
+    font-size: var(--fs-400);
+  }
+  .showcase-content-item-header p,
+  .project-content-item-header p{
+    font-size: var(--fs-200);
+  }
+  .showcase h1 {
+    margin-left: 0;
+  }
+  .project-item {
+    padding: var(--space-6);
+  }
+  .project-item-link:hover {
+    transform: translateY(-1px);
+  }
+  .projects-grid > h2 {
+    font-size: var(--fs-600);
+    margin-bottom: var(--space-6);
+  }
+
+  .project-item-link {
+    /* Dính ở dưới stage, không đè lên stage */
+    top: calc(var(--header-h) + 500px); 
+  }
+}
+
+/* Small screens */
+@media (max-width: 640px) {
+  .about-meta {
+    grid-template-columns: 1fr 1fr;
+  }
+  .about-stats {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-2);
+  }
+  .stat-item {
+    text-align: center;
+  }
+  .stat-number {
+    font-size: var(--fs-600);
+  }
+  .stat-label {
+    font-size: var(--fs-200);
+  }
+  .skills-grid {
+    gap: var(--space-3);
+  }
+  .skill-category {
+    padding: var(--space-3);
+  }
+  .skill-category h4 {
+    font-size: var(--fs-400);
+  }
+  .skill-category p {
+    font-size: var(--fs-200);
+  }
+  .showcase-content-item-header h2,
+  .project-content-item-header h2{
+    font-size: var(--fs-200);
+  }
+  .showcase-content-item-header p,
+  .project-content-item-header p{
+    font-size: var(--fs-100);
+  }
+  .panel-icons img,
+  .project-icons img{
+    width: 20px;
+    height: 20px;
+  }
+  .project-item {
+    padding: var(--space-4);
+  }
+  .project-item-link:hover {
+    transform: translateY(-1px);
+  }
+  .projects-grid > h2 {
+    font-size: var(--fs-500);
+    margin-bottom: var(--space-4);
+  }
+  .project-item-link {
+    /* Dính ở dưới stage, không đè lên stage */
+    top: calc(var(--header-h) + 400px); 
+  }
+}
+
+/* Extra small screens */
+@media (max-width: 480px) {
+  .about-stats {
+    grid-template-columns: 1fr;
+    gap: var(--space-3);
+  }
+  .stat-item {
+    padding: var(--space-2);
+    background: var(--bg-elev);
+    border-radius: var(--radius);
+  }
+  .skills-grid {
+    gap: var(--space-2);
+  }
+  .skill-category {
+    padding: var(--space-2);
+  }
+  .badges {
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+  .badge {
+    text-align: center;
+    padding: var(--space-2);
+  }
+  .showcase-content-item {
+    min-width: 390px;
+  }
+
+  .project-item-link {
+    /* Dính ở dưới stage, không đè lên stage */
+    top: calc(var(--header-h) + 250px); 
+  }
+}
+
+/* Mobile specific styles */
 @media screen and (max-width: 768px) {
   .header a {
     float: none;
@@ -52,5 +303,16 @@
   }
   .panel:nth-child(4) {
     z-index: 13;
+  }
+}
+
+/* Reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .btn,
+  .card {
+    transition: none !important;
+  }
+  .stage .media-next {
+    transition: none !important;
   }
 }

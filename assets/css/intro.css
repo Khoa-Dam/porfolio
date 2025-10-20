@@ -1,9 +1,7 @@
-/* assets/css/intro.css (Nội dung mới, đã cập nhật) */
 
 #terminal-overlay {
   position: fixed;
   inset: 0;
-  /* Thay đổi: Nền đen tuyền, không mờ */
   background: var(--bg);
   z-index: 9999;
   display: flex;
@@ -23,7 +21,7 @@
 
 #terminal-window {
   width: 100%;
-  max-width: 720px; /* Tăng nhẹ độ rộng tối đa */
+  max-width: 720px; 
   background: color-mix(in srgb, var(--bg-elev) 95%, transparent);
   border: 1px solid var(--line);
   border-radius: 12px;
@@ -71,9 +69,8 @@
 }
 
 #terminal-body {
-  padding: var(--space-6); /* Tăng padding */
+  padding: var(--space-6);
   font-family: var(--font-mono, monospace);
-  /* Thay đổi: Chữ to hơn */
   font-size: clamp(16px, 3vw, 18px);
   min-height: 300px;
   color: var(--text);
@@ -107,7 +104,7 @@
 .text-muted {
   color: var(--muted);
 }
-/* --- Kết thúc các lớp màu --- */
+/* --- --- */
 
 .cursor {
   display: inline-block;

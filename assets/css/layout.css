@@ -35,21 +35,6 @@
   gap: 10px;
 }
 
-/* Theme toggle */
-/* .theme-toggle {
-  background: none;
-  border: 1px solid transparent;
-  color: var(--muted, #9a9aa0);
-  padding: 8px 10px;
-  border-radius: 10px;
-  cursor: pointer;
-}
-.theme-toggle:hover,
-.theme-toggle:focus-visible {
-  color: var(--text, #f5f5f7);
-  outline: none;
-} */
-
 /* Hamburger */
 .menu-toggle {
   display: none; /* ẩn desktop */
@@ -131,7 +116,6 @@ main {
 }
 /* ===== Hero===== */
 
-/* ===== Mobile (≤768px): menu ở PHAI cùng với theme; drawer trượt từ phải ===== */
 @media (max-width: 768px) {
   .menu-toggle {
     display: inline-flex;
