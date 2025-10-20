@@ -389,18 +389,144 @@
 
       <!-- ====== PROJECTS (RENDERED FROM JSON) ====== -->
       <section id="projects" class="section projects" aria-label="Projects">
-        <div class="container">
-          <header class="section-head">
-            <h2 class="section-title reveal-on-scroll">Projects</h2>
-            <p class="section-sub reveal-on-scroll" data-delay="80">
-              A few selected builds.
-            </p>
-          </header>
+        <div class="container projects-grid">
+          <h2 class="section-title reveal-on-scroll">Projects</h2>
 
-          <!-- JS will render cards from /data/projects.json -->
-          <div id="projectsGrid" class="grid projects-grid"></div>
+          <!-- Left: sticky stage -->
+          <div class="stage" aria-label="Demo stage">
+            <img
+              id="stageMedia"
+              src="assets/images/projects/Movelazy.png"
+              alt="Technology showcase"
+            />
+          </div>
+
+          <!-- Right: content panels; on scroll, stage image/video updates -->
+          <div class="projects-content">
+            <a href="https://marketplace.visualstudio.com/items?itemName=Movelazy.movelazy-extension" class="project-item-link" target="_blank" rel="noopener noreferrer">
+              <article
+                class="project-item reveal-on-scroll is-active"
+                data-media="assets/images/projects/Movelazy.png"
+              >
+              <h2 class="project-title">
+                MoveLazy - VSCode Extension
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="project-link-icon">
+                  <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                  <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+                </svg>
+              </h2>
+              <div class="project-icons">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="17" y="17" width="10" height="10" fill="#FEBA08"/>
+                  <rect x="5" y="17" width="10" height="10" fill="#05A6F0"/>
+                  <rect x="17" y="5" width="10" height="10" fill="#80BC06"/>
+                  <rect x="5" y="5" width="10" height="10" fill="#F25325"/>
+                </svg>
+               
+              </div>
+              <p class="project-text">
+                This VSCode Extension integrates AI and Move to support the next generation of smart contracts. Our growth strategy focuses on:<br/>
+                - Improving the product for the Move ecosystem<br/>
+                - Developing the brand profile<br/>
+                - Building a developer community (focus Movement protocols)
+              </p>
+              </article>
+            </a>
+
+            <a href="https://github.com/Khoa-Dam/Blockchain-Recruiment-System" class="project-item-link" target="_blank" rel="noopener noreferrer">
+              <article
+                class="project-item reveal-on-scroll"
+                data-media="assets/images/projects/Recruiment.png"
+              >
+              <h2 class="project-title">
+                Blockchain Recruiment System
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="project-link-icon">
+                  <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                  <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+                </svg>
+              </h2>
+              <div class="project-icons">
+                <img
+                  height="32"
+                  width="32"
+                  src="https://cdn.simpleicons.org/nodedotjs/339933"
+                  alt="Node.js"
+                />
+           
+                <img
+                  height="32"
+                  width="32"
+                  src="https://cdn.simpleicons.org/express/white"
+                  alt="Express"
+                />
+                <img
+                  height="32"
+                  width="32"
+                  src="https://cdn.simpleicons.org/mongodb/47A248"
+                  alt="MongoDB"
+                />
+          
+              </div>
+              <p class="project-text">
+                A blockchain-powered human resource recruitment management system that transforms the hiring process.<br/>
+                Our platform focuses on:<br/>
+                - Building a transparent and decentralized recruitment ecosystem<br/>
+                - Ensuring data security and trust for both employers and candidates<br/>
+                - Optimizing the hiring workflow for efficiency and fairness<br/>
+                - Enhancing user experience through seamless interaction and blockchain transparency
+              </p>
+              </article>
+            </a>
+
+            <a href="https://www.vendor.deals/" class="project-item-link" target="_blank" rel="noopener noreferrer">
+              <article
+                class="project-item reveal-on-scroll"
+                data-media="assets/images/showcase/blockchain.png"
+              >
+              <h2 class="project-title">
+                Vendor - NFT Marketplace
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="project-link-icon">
+                  <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                  <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+                </svg>
+              </h2>
+              <div class="project-icons">
+                <img
+                  height="32"
+                  width="32"
+                  src="https://cdn.simpleicons.org/ethereum/627EEA"
+                  alt="Ethereum"
+                />
+                <img
+                  height="32"
+                  width="32"
+                  src="https://cdn.simpleicons.org/solidity/363636"
+                  alt="Solidity"
+                />
+                <img
+                  height="32"
+                  width="32"
+                  src="https://cdn.simpleicons.org/ipfs/65C2CB"
+                  alt="IPFS"
+                />
+            
+              </div>
+              <p class="project-text">
+                A decentralized NFT marketplace built on the Cedra blockchain that redefines digital ownership.<br/>
+                Our platform focuses on:<br/>
+                - Empowering creators and collectors through transparent and secure NFT trading<br/>
+                - Enabling fast, low-cost transactions with true asset ownership<br/>
+                - Building a vibrant ecosystem for discovering and showcasing digital art<br/>
+                - Delivering a seamless user experience with blockchain transparency and trust
+              </p>
+              </article>
+            </a>
+
+           
+          </div>
         </div>
       </section>
+
 
       <section id="resume" class="section resume" aria-label="Resume">
         <div class="container">

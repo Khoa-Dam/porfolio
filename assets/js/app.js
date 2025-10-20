@@ -31,10 +31,12 @@ const isVideoUrl = (url) => /\.(mp4|webm|mov|m4v)$/i.test(url);
 (() => {
   const stage = document.querySelector(".stage");
   const panels = Array.from(document.querySelectorAll(".panels .panel"));
-  if (!stage || !panels.length) return;
+  const projectItems = Array.from(document.querySelectorAll(".projects-content .project-item"));
+  const items = [...panels, ...projectItems];
+  if (!stage || !items.length) return;
 
   // Ensure stage can host absolutely-positioned children
-  stage.style.position = stage.style.position || "sticky";
+  // stage.style.position = stage.style.position || "sticky";
 
   // Current live media (img/video)
   let currentEl = document.getElementById("stageMedia");
@@ -108,11 +110,11 @@ const isVideoUrl = (url) => /\.(mp4|webm|mov|m4v)$/i.test(url);
   const io = new IntersectionObserver(
     (entries) => {
       entries.forEach((en) => {
-        const panel = en.target;
+        const item = en.target;
         if (en.isIntersecting) {
-          panels.forEach((p) => p.classList.remove("is-active"));
-          panel.classList.add("is-active");
-          const media = panel.getAttribute("data-media");
+          items.forEach((i) => i.classList.remove("is-active"));
+          item.classList.add("is-active");
+          const media = item.getAttribute("data-media");
           if (media) swapMedia(media);
         }
       });
@@ -120,7 +122,7 @@ const isVideoUrl = (url) => /\.(mp4|webm|mov|m4v)$/i.test(url);
     { rootMargin: "-35% 0px -50% 0px", threshold: 0.01 }
   );
 
-  panels.forEach((p) => io.observe(p));
+  items.forEach((item) => io.observe(item));
 })();
 
 // ===== Theme toggle (sync both buttons & persist) =====
@@ -145,6 +147,47 @@ const isVideoUrl = (url) => /\.(mp4|webm|mov|m4v)$/i.test(url);
       setTheme(next);
     });
   });
+})();
+
+// ===== Projects Overlap Animation =====
+(() => {
+  const projectItems = document.querySelectorAll('.project-item');
+  const stage = document.querySelector('.stage');
+
+  if (!projectItems.length || !stage) return;
+
+  let currentActiveIndex = 0;
+
+  // Intersection Observer for overlap detection
+  const io = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting && entry.intersectionRatio >= 0.5) {
+          const index = Array.from(projectItems).indexOf(entry.target);
+
+          // Change image for any direction scroll
+          if (index !== currentActiveIndex) {
+            currentActiveIndex = index;
+
+            // Change image immediately
+            const media = entry.target.getAttribute('data-media');
+            if (media) {
+              const stageImg = stage.querySelector('img');
+              if (stageImg) {
+                stageImg.src = media;
+              }
+            }
+          }
+        }
+      });
+    },
+    {
+      rootMargin: '-20% 0px -20% 0px',
+      threshold: [0.5, 0.8, 1.0]
+    }
+  );
+
+  projectItems.forEach(item => io.observe(item));
 })();
 
 // ===== Footer year =====
