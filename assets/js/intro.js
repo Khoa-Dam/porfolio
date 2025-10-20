@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
       // THAY ĐỔI: Đã xóa dòng "inline: true," ở đây
     },
     { type: "delay", duration: 600 },
-    { type: "command", text: "open https://your-portfolio-url.com" }, // <-- LƯU Ý: Hãy thay URL này!
+    { type: "command", text: "open https://khoa-dam.github.io/porfolio/" }, // <-- LƯU Ý: Hãy thay URL này!
     { type: "delay", duration: 400 },
     {
       type: "output",

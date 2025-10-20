@@ -18,7 +18,6 @@ function showSlides(n) {
 
     // Check if elements exist before accessing them
     if (slides.length === 0 || dots.length === 0) {
-        console.log('No slides or dots found, skipping showSlides');
         return;
     }
 
@@ -36,15 +35,12 @@ function showSlides(n) {
 
 // Scroll to specific panel function
 function scrollToPanel(panelIndex) {
-    console.log('scrollToPanel called with panelIndex:', panelIndex);
 
     const panels = document.querySelectorAll('.showcase-content-item');
     const dots = document.querySelectorAll('.panel-nav-dots .dot');
 
-    console.log('Found panels:', panels.length, 'dots:', dots.length);
 
     if (panels.length === 0 || panelIndex >= panels.length) {
-        console.error('Panel not found:', panelIndex);
         return;
     }
 
@@ -52,7 +48,6 @@ function scrollToPanel(panelIndex) {
     const showcaseContent = document.querySelector('.showcase-content');
 
     if (!targetPanel || !showcaseContent) {
-        console.error('Elements not found');
         return;
     }
 
@@ -109,7 +104,6 @@ function scrollToPanel(panelIndex) {
     // Update current panel index for auto slide
     if (typeof currentPanelIndex !== 'undefined') {
         currentPanelIndex = panelIndex;
-        console.log('Manual click - updated currentPanelIndex to:', currentPanelIndex);
 
         // Pause progress animation on manual click
         const activeDot = document.querySelector('.panel-nav-dots .dot.active');
@@ -120,29 +114,22 @@ function scrollToPanel(panelIndex) {
         // Only stop auto slide if user clicks on the last panel (panel 3)
         if (panelIndex === 3) {
             userHasInteracted = true; // Mark that user has interacted
-            console.log('User clicked last panel, stopping auto slide');
 
             if (autoSlideInterval) {
                 clearInterval(autoSlideInterval);
                 autoSlideInterval = null;
-                console.log('Auto slide stopped due to manual click on last panel');
-            } else {
-                console.log('No auto slide interval to stop');
             }
         } else {
             // If user clicks on panels 0-2, restart auto slide if it was stopped
             if (userHasInteracted && !autoSlideInterval) {
-                console.log('User clicked panel', panelIndex, '- restarting auto slide');
                 userHasInteracted = false; // Reset the flag
                 setTimeout(() => {
                     startAutoSlide();
                 }, 100);
             } else {
-                console.log('User clicked panel', panelIndex, '- auto slide will continue');
             }
         }
     } else {
-        console.log('currentPanelIndex is undefined - this is an auto slide call');
     }
 }
 
@@ -156,7 +143,6 @@ function startAutoSlide() {
     autoSlideInterval = setInterval(() => {
         // Check if user has interacted before proceeding
         if (userHasInteracted) {
-            console.log('User has interacted, stopping auto slide');
             clearInterval(autoSlideInterval);
             autoSlideInterval = null;
             return;
@@ -169,7 +155,6 @@ function startAutoSlide() {
         currentPanelIndex = (currentPanelIndex + 1) % panels.length;
         scrollToPanel(currentPanelIndex);
 
-        console.log('Auto slide to panel:', currentPanelIndex, 'of', panels.length);
     }, 5000); // Auto slide every 5 seconds
 }
 
@@ -182,13 +167,11 @@ function stopAutoSlide() {
 
 // Simple scroll-based visibility for panel nav dots
 document.addEventListener('DOMContentLoaded', function () {
-    console.log('DOM loaded, setting up scroll listener');
 
     const showcaseSection = document.querySelector('.showcase');
     const panelNavDots = document.querySelector('.panel-nav-dots');
 
     if (!showcaseSection || !panelNavDots) {
-        console.error('Showcase section or nav dots not found');
         return;
     }
 
@@ -252,17 +235,13 @@ document.addEventListener('DOMContentLoaded', function () {
         const showcaseCenter = rect.top + (rect.height / 2);
         const shouldShow = showcaseCenter > 0 && showcaseCenter < window.innerHeight;
 
-        console.log('Scroll check - shouldShow:', shouldShow, 'autoSlideInterval:', !!autoSlideInterval, 'userHasInteracted:', userHasInteracted);
-
         if (shouldShow) {
             // Only start auto slide if user hasn't interacted yet
             if (!autoSlideInterval && !userHasInteracted) {
-                console.log('Starting auto slide');
                 startAutoSlide();
             }
         } else {
             if (autoSlideInterval) {
-                console.log('Stopping auto slide');
                 stopAutoSlide();
             }
         }
