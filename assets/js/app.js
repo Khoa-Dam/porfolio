@@ -125,6 +125,82 @@ const isVideoUrl = (url) => /\.(mp4|webm|mov|m4v)$/i.test(url);
   items.forEach((item) => io.observe(item));
 })();
 
+// ===== Contact Form Handling with EmailJS =====
+(() => {
+  const contactForm = document.getElementById('contact-form');
+  if (!contactForm) return;
+
+  // Initialize EmailJS with your Public Key
+  emailjs.init('xT5J5YgEbpHJH6AER'); // Thay YOUR_PUBLIC_KEY bằng Public Key thực từ EmailJS Dashboard
+
+  contactForm.addEventListener('submit', async function (e) {
+    e.preventDefault();
+
+    const submitBtn = contactForm.querySelector('button[type="submit"]');
+    const originalText = submitBtn.textContent;
+
+    // Show loading state
+    submitBtn.textContent = 'Sending...';
+    submitBtn.disabled = true;
+
+    // Remove any existing messages
+    const existingMessage = contactForm.querySelector('.form-message');
+    if (existingMessage) {
+      existingMessage.remove();
+    }
+
+    try {
+      // Prepare template parameters
+      const templateParams = {
+        to_name: 'Kaito', // Tên người nhận email (bạn)
+        from_name: contactForm.name.value,
+        from_email: contactForm.email.value,
+        reply_to: contactForm.email.value, // Quan trọng cho Reply To
+        subject: contactForm.subject.value,
+        message: contactForm.message.value
+      };
+
+      // Send email using EmailJS
+      const response = await emailjs.send(
+        'service_2j5dnbn', // Service ID từ EmailJS
+        'template_xmyaif8', // Template ID từ EmailJS
+        templateParams
+      );
+
+      if (response.status === 200) {
+        // Show success message
+        showFormMessage('Message sent successfully! I\'ll get back to you soon.', 'success');
+        contactForm.reset();
+      } else {
+        throw new Error('Email sending failed');
+      }
+
+    } catch (error) {
+      console.error('EmailJS Error:', error);
+      console.error('Error details:', error.text || error.message);
+      // Show error message
+      showFormMessage(`Failed to send message: ${error.text || error.message}. Please try again or contact me directly.`, 'error');
+    } finally {
+      // Reset button state
+      submitBtn.textContent = originalText;
+      submitBtn.disabled = false;
+    }
+  });
+
+  function showFormMessage(text, type) {
+    const message = document.createElement('div');
+    message.className = `form-message ${type}`;
+    message.textContent = text;
+
+    contactForm.appendChild(message);
+
+    // Auto remove after 5 seconds
+    setTimeout(() => {
+      message.remove();
+    }, 5000);
+  }
+})();
+
 // ===== Theme toggle (sync both buttons & persist) =====
 (() => {
   const toggles = Array.from(document.querySelectorAll(".theme-toggle"));
