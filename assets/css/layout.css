@@ -123,10 +123,6 @@ main {
     z-index: 100;
     border: none;
   }
-  /* .theme-toggle {
-    order: 1;
-    display: none;
-  } */
   .header-inner {
     justify-content: space-between;
   }
